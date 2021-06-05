@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Bicubik";
+  src: url("/app/src/fonts/bicubik.ttf");
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Bicubik";
+  background-color: #200D3A;
+}
+
+.hide {
+  display: none !important;
+}
+
+/*# sourceMappingURL=header.css.map */

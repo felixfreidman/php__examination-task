@@ -1,0 +1,101 @@
+html
+    head
+        title Календарь
+        meta(charset="UTF-8")
+        meta(http-equiv = "X-UA-Compatible", content = "IE-edge")
+        meta(name = "viewport", content ="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/app/src/styles/css/header.css")
+        link(rel="stylesheet", href="/app/src/styles/css/main.css")
+        link(rel="stylesheet", href="/app/src/styles/css/add_card.css")
+        link(rel="stylesheet", href="/app/src/styles/css/change_card.css")
+        link(rel="shortcut icon", href="/app/src/images/favicon.png", type="image/x-icon")
+    bpdy
+        #darkAdd.dark.hide   
+            .modal-window.modal-window_type_add
+                .subheader Добавить задание
+                form(action="/app/src/scripts/add_task.php", method="post").modal-window__form
+                    button(type="button" onclick="closeModalWindowToAdd()").modal-window__close-btn
+                    
+                    select#typeInput(name="selectTypeAdd" required).modal-window__form-select
+                        option(value="" selected disabled) Укажите тип встречи
+                        option(value="Встреча" ) Встреча
+                        option(value="Звонок") Звонок
+                        option(value="Дело") Дело
+                        option(value="Совещание") Совещание
+                    textarea#commentToAdd(name="commentAdd" pattern="^[a-zA-Z]+$" placeholder = "Задание" required).modal-window__form-textarea
+                    input#dateInput(type="date" name="dateToAdd" required).modal-window__form-input 
+                    input#timeInput(type="text" name="timeToAdd" placeholder="Время" data-mask="__:__" data-slots="_"
+            data-accept="[0-9]"
+            required size = "4").modal-window__form-input
+                    button(type="submit").modal-window__form-btn Добавить
+
+        #darkEdit.dark   
+            .modal-window.modal-window_type_add
+                .subheader Изменить задание
+                form(action="/app/src/scripts/edit_task.php", method="post").modal-window__form
+                    button(type="button" onclick="closeModalWindowToEdit()").modal-window__close-btn
+                    
+                    select#typeInput(name="selectTypeUpdate" required).modal-window__form-select
+                        option(value="" selected disabled) Укажите тип встречи
+                        option(value="Встреча" ) Встреча
+                        option(value="Звонок") Звонок
+                        option(value="Дело") Дело
+                        option(value="Совещание") Совещание
+                    textarea#commentToAdd(name="commentUpdate" pattern="^[a-zA-Z]+$" placeholder = "Задание" required).modal-window__form-textarea
+                    input#dateInput(type="date" name="dateToUpdate" required).modal-window__form-input 
+                    input#timeInput(type="text" name="timeToUpdate" placeholder="Время" data-mask="__:__" data-slots="_"
+            data-accept="[0-9]"
+            required size = "4").modal-window__form-input
+                    button(type="submit").modal-window__form-btn Изменить
+
+        #darkDelete.dark.hide   
+            .modal-window.modal-window_type_add
+                .subheader Добавить задание
+                form(action="/app/src/scripts/add_task.php", method="post").modal-window__form
+                    button(type="button" onclick="closeModalWindowToAdd()").modal-window__close-btn
+                    
+                    select#typeInput(name="selectTypeAdd" required).modal-window__form-select
+                        option(value="" selected disabled) Укажите тип встречи
+                        option(value="Встреча" ) Встреча
+                        option(value="Звонок") Звонок
+                        option(value="Дело") Дело
+                        option(value="Совещание") Совещание
+                    textarea#commentToAdd(name="commentAdd" pattern="^[a-zA-Z]+$" placeholder = "Задание" required).modal-window__form-textarea
+                    input#dateInput(type="date" name="dateToAdd" required).modal-window__form-input 
+                    input#timeInput(type="text" name="timeToAdd" placeholder="Время" data-mask="__:__" data-slots="_"
+            data-accept="[0-9]"
+            required size = "4").modal-window__form-input
+                    button(type="submit").modal-window__form-btn Добавить
+                
+
+        .main-section 
+            .main-section__container
+                .logo
+                .header Календарь 
+            .main-section__container 
+                .table-calendar
+                    .subheader Дела
+                    .table-calendar__content 
+                        .table-calendar__panel-content 
+                            form(action="/app/src/php/transport.php", method="post").table-calendar__form
+                                select#taskTypeSelect(name="taskType").table-calendar__form-select
+                                    option(value="Все дела", selected) Все дела
+                                    option(value="Текущие Дела") Текущие Дела
+                                    option(value="Просроченные дела") Просроченные дела
+                                    option(value="Просроченные дела") Дела Сегодня
+                                    option(value="Просроченные дела") Дела Завтра
+                                    option(value="Просроченные дела") Дела на этой неделе
+                                    option(value="Просроченные дела") Дела на следующей неделе
+                                button(type="submit").table-calendar__form-btn Отфильтровать
+                                
+                        .table-calendar__task-content
+                            .task-card
+                                .task-card__header-type Тип
+                                .task-card__header-task Задача
+                                .task-card__header-time Дата и время
+                            .task-card
+                            .task-card
+                            .task-card
+        .main-section__add-btn(onclick="openModalToAdd()") 
+            img(src="/app/src/images/cross.svg", alt="ADD")
+        script(src="/app/src/js/index.js") 

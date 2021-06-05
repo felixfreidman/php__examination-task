@@ -1,0 +1,166 @@
+.main-section {
+  display: flex;
+  flex-direction: column;
+  padding: 2vh 5vw;
+  width: calc( 100% - 10vw );
+  height: 96vh;
+  position: relative;
+}
+
+.main-section__container {
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  color: #ecc6a2;
+  font-size: 64px;
+}
+
+.table-calendar {
+  margin-top: 40px;
+  padding: 20px 30px;
+  border: 3px solid #CE5E82;
+  width: calc( 100% - 40px );
+  height: fit-content;
+  height: -moz-fit-content;
+  min-height: calc( 80vh - 60px );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 22px;
+}
+
+.subheader {
+  color: #eca089;
+  font-size: 50px;
+}
+
+.table-calendar__content {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.table-calendar__form {
+  height: fit-content;
+  height: -moz-fit-content;
+  padding: 15px 0px 0px 10px;
+}
+
+.table-calendar__panel-content {
+  width: 100%;
+  display: flex;
+  background-color: #292651;
+  align-items: center;
+  border-radius: 12px 12px 0px 0px;
+}
+
+.table-calendar__form-select {
+  padding: 10px 15px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-family: "Bicubik";
+  background-color: #2e4770;
+  color: #ffffff;
+  font-size: 18px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.table-calendar__form-btn {
+  padding: 11px 15px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-family: "Bicubik";
+  background-color: #2e4770;
+  color: #ffffff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.table-calendar__task-content {
+  background-color: #222745;
+  height: fit-content;
+  height: -moz-fit-content;
+  min-height: 80px;
+  border-radius: 0px 0px 12px 12px;
+}
+
+.task-card {
+  width: 100%;
+  background-color: #cc3a91;
+  height: 80px;
+  display: flex;
+  color: #ffffff;
+  align-items: center;
+}
+
+.task-card:nth-child(2n+1) {
+  background-color: #7f3e9b;
+}
+
+.task-card:last-child {
+  border-radius: 0px 0px 12px 12px;
+}
+
+.task-card__header-type {
+  width: 20%;
+  border-right: 3px solid #200D3A;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.task-card__header-task {
+  width: 50%;
+  border-right: 3px solid #200D3A;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.task-card__header-time {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  font-size: 20px;
+}
+
+.main-section__add-btn {
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  right: 5%;
+  bottom: 5%;
+  background-color: #ff7d4c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform ease 0.95s;
+  transition: background ease 0.95s;
+  cursor: pointer;
+}
+.main-section__add-btn img {
+  width: 50px;
+  height: 50px;
+}
+
+.main-section__add-btn:hover {
+  background: #ffb818;
+  transition: background ease 0.95s;
+}
+.main-section__add-btn:hover img {
+  transform: rotate(90deg);
+  transition: transform ease 0.5s;
+}
+
+/*# sourceMappingURL=main.css.map */

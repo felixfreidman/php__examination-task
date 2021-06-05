@@ -1,0 +1,58 @@
+@import main.sass
+.dark
+    width: 100%
+    height: 100%
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 10
+    background-color:  rgba(0,0,0,0.6)
+    display: flex
+    align-items: center
+    justify-content: center
+
+.modal-window
+    position: relative
+    width: calc(80% - 160px)
+    height: calc(80% - 80px)
+    background-color:  $berry
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 40px 80px
+    border-radius: 14px
+.modal-window__close-btn
+    background-image: url("/app/src/images/cancel.svg")
+    background-color: transparent
+    width: 40px
+    height: 40px
+    border: none
+    outline: none
+    position: absolute
+    top: 45px
+    right: 80px
+.modal-window__form
+    display: flex
+    flex-direction: column
+    margin-top: 40px
+    width: 100%
+.modal-window__form-select,
+.modal-window__form-input,
+.modal-window__form-textarea,
+.modal-window__form-btn 
+    width: 100%
+    padding: 25px
+    border-radius: 14px
+    border: none
+    outline: none
+    margin-bottom: 30px
+    font-family: "Bicubik"
+    cursor: pointer
+    background-color: $white
+.modal-window__form-select:focus,
+.modal-window__form-input:focus,
+.modal-window__form-textarea:focus
+     border: 3px solid $darkViolet
+.modal-window__form-btn:hover
+    background-color: $darkViolet
+    color: $white
