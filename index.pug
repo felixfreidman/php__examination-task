@@ -6,8 +6,7 @@ html
         meta(name = "viewport", content ="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", href="/app/src/styles/css/header.css")
         link(rel="stylesheet", href="/app/src/styles/css/main.css")
-        link(rel="stylesheet", href="/app/src/styles/css/add_card.css")
-        link(rel="stylesheet", href="/app/src/styles/css/change_card.css")
+        link(rel="stylesheet", href="/app/src/styles/css/card_actions.css")
         link(rel="shortcut icon", href="/app/src/images/favicon.png", type="image/x-icon")
     bpdy
         #darkAdd.dark.hide   
@@ -29,8 +28,8 @@ html
             required size = "4").modal-window__form-input
                     button(type="submit").modal-window__form-btn Добавить
 
-        #darkEdit.dark   
-            .modal-window.modal-window_type_add
+        #darkEdit.dark.hide   
+            .modal-window.modal-window_type_edit
                 .subheader Изменить задание
                 form(action="/app/src/scripts/edit_task.php", method="post").modal-window__form
                     button(type="button" onclick="closeModalWindowToEdit()").modal-window__close-btn
@@ -47,25 +46,15 @@ html
             data-accept="[0-9]"
             required size = "4").modal-window__form-input
                     button(type="submit").modal-window__form-btn Изменить
+                    input#idInput(type="text" readonly name = "idInputUpdate" style = "visibility: hidden")
 
         #darkDelete.dark.hide   
-            .modal-window.modal-window_type_add
-                .subheader Добавить задание
+            .modal-window.modal-window_type_delete
+                .subheader Точно удалить?
                 form(action="/app/src/scripts/add_task.php", method="post").modal-window__form
                     button(type="button" onclick="closeModalWindowToAdd()").modal-window__close-btn
-                    
-                    select#typeInput(name="selectTypeAdd" required).modal-window__form-select
-                        option(value="" selected disabled) Укажите тип встречи
-                        option(value="Встреча" ) Встреча
-                        option(value="Звонок") Звонок
-                        option(value="Дело") Дело
-                        option(value="Совещание") Совещание
-                    textarea#commentToAdd(name="commentAdd" pattern="^[a-zA-Z]+$" placeholder = "Задание" required).modal-window__form-textarea
-                    input#dateInput(type="date" name="dateToAdd" required).modal-window__form-input 
-                    input#timeInput(type="text" name="timeToAdd" placeholder="Время" data-mask="__:__" data-slots="_"
-            data-accept="[0-9]"
-            required size = "4").modal-window__form-input
-                    button(type="submit").modal-window__form-btn Добавить
+                    button(type="submit").modal-window__form-btn Удалить
+                    button(type="button" onclick="closeModalWindowToAdd()").modal-window__form-btn Отменить
                 
 
         .main-section 

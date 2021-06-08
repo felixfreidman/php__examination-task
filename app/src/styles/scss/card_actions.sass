@@ -14,7 +14,8 @@
 .modal-window
     position: relative
     width: calc(80% - 160px)
-    height: calc(80% - 80px)
+    height: fit-content
+    height: -moz-fit-content
     background-color:  $berry
     display: flex
     flex-direction: column
@@ -31,6 +32,7 @@
     position: absolute
     top: 45px
     right: 80px
+    cursor: pointer
 .modal-window__form
     display: flex
     flex-direction: column
@@ -56,3 +58,11 @@
 .modal-window__form-btn:hover
     background-color: $darkViolet
     color: $white
+.modal-window_type_delete
+    height: calc(30% - 80px)
+    .modal-window__form
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+    .modal-window__form-btn 
+        width: 45%
