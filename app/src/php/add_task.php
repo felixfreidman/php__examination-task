@@ -9,7 +9,7 @@
         $date = $_POST['dateToAdd'];
         $duration = $_POST['timeToAdd'];
         $comment = $_POST['commentAdd'];
-        $insert = "INSERT INTO `calendarapp93`.`tasks` (`type`,`comment`,`due_date`, `time`) VALUES ('$type','$comment', '$date', '$duration');";
+        $insert = "INSERT INTO `tasks` (`type`,`comment`,`due_date`, `time`) VALUES ('$type','$comment', '$date', '$duration');";
     $dbo->exec($insert); 
 exit();
             ?>

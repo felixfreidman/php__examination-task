@@ -65,27 +65,16 @@ dateInput.value = `${newdate}`;
 dateInput.min = `${newdate}`;
 dateInput.max = `${newdateMax}`;
 
-// let openModalWindowToAdd = (element) => {
-//     element = element.toString();
-//     console.log(element);
-//     let id = element.replace('node', '');
-//     document.querySelector(".dark").classList.toggle("fadeIn");
-//     document.getElementById("modalWindow").classList.toggle("fadeIn");
-//     let cardInputArray = document.querySelectorAll(`.${element}`);
-//     document.getElementById("topicInput").value = cardInputArray[0].textContent.trim();
-//     document.getElementById("typeInput").value = cardInputArray[1].textContent.trim();
-//     document.getElementById("dateInput").value = cardInputArray[2].textContent.trim();
-//     document.getElementById("durationInput").value = cardInputArray[3].textContent.trim();
-//     document.getElementById("commentInput").value = cardInputArray[4].textContent.trim();
-//     document.getElementById("idInput").value = id;
-// };
+
+// Функции для отображения различных модулей управления календарем
+// Модуль для добавления задания
 let openModalWindowToAdd = () => {
     document.getElementById("darkAdd").classList.toggle("hide");
 };
 let closeModalWindowToAdd = () => {
   document.getElementById("darkAdd").classList.toggle("hide");
 };
-
+// Модуль для изменения здание
 let openModalWindowToEdit = (element) => {
   element = element.toString();
   let id = element.replace('node', '');
@@ -107,7 +96,7 @@ let closeModalWindowToEdit = () => {
   document.getElementById("darkEdit").classList.toggle("hide");
 }
 
-
+// Модуль для удаления
 let openModalWindowToDelete = (element) => {
   element = element.toString();
   let id = element.replace('node', '');
@@ -119,22 +108,5 @@ let closeModalWindowToDelete = () => {
   document.getElementById("darkDelete").classList.toggle("hide");
 }
 
-
-
-// let closeModalWindow = () => {
-//     document.querySelector(".dark").classList.toggle("fadeIn");
-//     document.getElementById("modalWindow").classList.toggle("fadeIn");
-// };
-
-// let openModalWindowToDelete = (element) => {
-//     element = element.toString();
-//     let id = element.replace('node', '');
-//     document.getElementById("idInputDelete").value = id;
-//     document.querySelector(".dark").classList.toggle("fadeIn");
-//     document.getElementById("modalWindowDelete").classList.toggle("fadeIn");
-// };
-
-// let closeModalWindowDelete = () => {
-//     document.querySelector(".dark").classList.toggle("fadeIn");
-//     document.getElementById("modalWindowDelete").classList.toggle("fadeIn");
-// }
+// Для успешного управления я передаю в функции id заданий, чтобы проводить дальнейшие задания
+// ID пропускаю в строку и обрезаю для получения чистого id, чтобы затем передать скрытой форме для передачи этого id уже в БД чтобы осуществлять управление
