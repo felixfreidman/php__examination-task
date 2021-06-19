@@ -6,15 +6,14 @@
 	$dbo = new PDO("mysql:host=" . $servername . ";port=3306;dbname=" . $dbname, $username, $password);
 
 	$login = $_POST['login-reg'];
-	$password = $_POST['pass-regd'];
+	$password = $_POST['pass-reg'];
 	$login = filter_var(trim($login), FILTER_SANITIZE_STRING); 
 	$pass = filter_var(trim($password), FILTER_SANITIZE_STRING); 
 	if(mb_strlen($login) < 5 || mb_strlen($login) > 90){
 		echo "Недопустимая длина логина";
 		exit();
 	}
-	$result1 = $dbo->query("SELECT * FROM `users` WHERE `login` = '$login'");
-	$user1 = $result1->fetch_assoc(); 
+	$result = $dbo->query("SELECT * FROM `users` WHERE `login` = '$login'");
 	if(!empty($user1)){
 		echo "Данный логин уже используется!";
 		exit();

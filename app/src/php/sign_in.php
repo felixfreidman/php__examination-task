@@ -9,16 +9,10 @@
 	$password = $_POST['pass-log'];
 	$login = filter_var(trim($login), FILTER_SANITIZE_STRING); 
 	$pass = filter_var(trim($password), FILTER_SANITIZE_STRING); 
-	$result = $dbo->query("SELECT * FROM `users` WHERE `login` = '$login' AND `pass` = '$password'");
-	$user = $result->fetch_assoc();
-	if ($user) {
-		echo "Такой пользователь не найден.";
-		exit();
+	foreach($dbo->query('SELECT * FROM `users`;') as $row) {
+		if(($login == $row['login']) && ($password == $row['password'])){
+			header("Location: https://calendarapp.hostfl.ru/app/src/pages/calendar.php");
+			exit();
+		}
 	}
-	else if(count($user) == 1){
-		echo "Логин или пароль введены неверно";
-		exit();
-	}
-	header("Location: https://calendarapp.hostfl.ru/app/src/pages/calendar.php");
-	exit();
  ?>
