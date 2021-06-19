@@ -113,7 +113,7 @@
                          $currentMonth = date("m");
                          $currentYear = date("Y");
                          $currentDate = $currentYear . '-' . $currentMonth . '-' . $currentDay;
-                         foreach ($dbo->query("SELECT * FROM `tasks` WHERE `due_date` > '$currentDate';") as $row) {
+                         foreach ($dbo->query("SELECT * FROM `tasks` WHERE `due_date` >= '$currentDate';") as $row) {
                            echo
                                 ' 
                                 <div class="task-card node'.$row['ID'].'" onclick=openModalWindowToEdit("node'.$row['ID'].'") oncontextmenu=openModalWindowToDelete("node'.$row['ID'].'") >

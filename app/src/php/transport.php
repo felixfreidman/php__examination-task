@@ -14,7 +14,7 @@ switch($taskType){
         header("Location: https://calendarapp.hostfl.ru/app/src/pages/tomorrow_tasks.php");
         break;
     case "alltasks":
-        header("Location: https://calendarapp.hostfl.ru/");
+        header("Location: https://calendarapp.hostfl.ru/app/src/pages/calendar.php");
         break;
 }
 ?>
